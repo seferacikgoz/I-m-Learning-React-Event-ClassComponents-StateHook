@@ -37,12 +37,17 @@ const UseStateCounter = () => {
 
   return (
     <div className="container text-center mt-4">
+        <section>
     <h1>USESTATE HOOK</h1>
     <h2 className="display-4 text-danger">COUNT:{count}</h2>
     <button onClick={inc} className="btn btn-success">INC</button>
     <button onClick={() => setCount(0)} className="btn btn-dark">CLR</button>
 {/*     <button onClick={dec} className="btn btn-danger">DEC</button>  */}   <button onClick={() => count > 0 && setCount(count - 1)} className="btn btn-danger">DEC</button>
-  
+  </section>
+  <section>
+  <h1>USESTATE OBJECT</h1>
+  </section>
+    
   </div>
   )
 }
