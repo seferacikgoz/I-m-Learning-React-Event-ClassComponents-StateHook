@@ -22,9 +22,24 @@ import { useState } from "react"
 
 const UseStateCounter = () => {
  const [count, setCount] = useState(0)
+
+ const [person, setPerson] = useState({
+    name: "John",
+    surname: "Doe",
+    age: 43
+ })
+
  
  const inc = () => {
     setCount(count + 1)
+}
+
+const incAge = () => {
+    //? Bu şekilde  bir atama ile sayısal değer state in üzerine yazılmış oldu
+    //? dolayısıyla obje yapısı bozuldu
+    /* setPerson(person.age + 1) */
+
+    setPerson({...person, age: person.age + 1})
 }
 
   /*   const dec = () => {
@@ -46,6 +61,10 @@ const UseStateCounter = () => {
   </section>
   <section>
   <h1>USESTATE OBJECT</h1>
+  <h2>{person.name}</h2>
+  <h2>{person.surname}</h2>
+  <h4>{person.age}</h4>
+  <button onClick={incAge} className="btn btn-info">inc age</button>
   </section>
     
   </div>
